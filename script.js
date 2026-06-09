@@ -184,7 +184,7 @@ function fixTwitchEmbeds() {
     });
 }
 
-// Fallback de imágenes del logo
+// Fallback de imágenes del logo (ahora con ICONO.png)
 function initImageFallbacks() {
     const logoImg = document.querySelector('.logo-image');
     const logoPlaceholder = document.querySelector('.logo-placeholder');
@@ -195,8 +195,8 @@ function initImageFallbacks() {
         };
         // Si la imagen no carga por cualquier motivo, mostrar el placeholder
         if (!logoImg.complete || logoImg.naturalWidth === 0) {
-            logoImg.style.display = 'none';
-            logoPlaceholder.style.display = 'flex';
+            // No ocultamos inmediatamente porque puede estar cargando
+            // Solo si realmente falla se activará el onerror
         }
     }
 }
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     iframes.forEach(iframe => iframe.setAttribute('loading', 'lazy'));
 });
 
-// Asegurar que el fix se ejecute también si los iframes se cargan después (por si acaso)
+// Asegurar que el fix se ejecute también si los iframes se cargan después
 window.addEventListener('load', fixTwitchEmbeds);
 
 window.addEventListener('beforeunload', () => {
