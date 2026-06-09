@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>NiniTarivers | Streamer Profesional (Ponele)</title>
+    <link rel="icon" type="image/jpeg" href="ICONO.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Nunito:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <canvas id="techBackground"></canvas>
+    
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="icono.jpg" alt="NiniTarivers" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="logo-text-container">
+                    <span class="logo-text">NINITARIVERS</span>
+                    <span class="logo-subtitle">STREAMER PRO</span>
+                </div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">INICIO</a></li>
+                <li><a href="#biografia" class="nav-link">BIOGRAFÍA</a></li>
+                <li><a href="#valorant" class="nav-link">VALORANT</a></li>
+                <li><a href="#clips" class="nav-link">CLIPS</a></li>
+                <li><a href="#contacto" class="nav-link">CONTACTO</a></li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Sección Hero con stream EN VIVO de Twitch -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">NINITARIVERS</span><br>
+                        <span style="font-size: 0.9em;">ADICTA AL <span class="gradient-text">VALORANT</span></span>
+                    </h1>
+                    <p class="hero-description">
+                        Directos nocturnos, partidas tryhard y momentos épicos. 
+                        Vivo de noche, duermo de día y cuando no estoy jugando, 
+                        me convierto en deportista (a veces).
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://www.twitch.tv/ninitarivers" target="_blank" class="cta-button">
+                            <span>SIGUE EN TWITCH</span>
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a href="#clips" class="cta-button portfolio-btn">
+                            <span>MEJORES CLIPS</span>
+                            <i class="fas fa-video"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-video">
+                    <div class="video-container">
+                        <div class="video-label">
+                            <span class="video-badge"><i class="fas fa-circle" style="font-size: 0.7rem; margin-right: 6px; color: #ff0000;"></i> EN DIRECTO</span>
+                            <h3 class="video-title">Twitch.tv/ninitarivers</h3>
+                        </div>
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://player.twitch.tv/?channel=ninitarivers&parent=localhost&parent=127.0.0.1&autoplay=false"
+                                allow="fullscreen"
+                                title="Stream en vivo de NiniTarivers">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de características / Biografía -->
+    <section class="features" id="biografia">
+        <div class="container">
+            <h2 class="section-title">SOBRE <span class="gradient-text">NINI</span></h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>VIVE DE NOCHE</h3>
+                    <p>Su horario empieza cuando el sol se esconde. Directos hasta altas horas, madrugadas épicas y siestas de día.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>DEPORTISTA (A VECES)</h3>
+                    <p>Cuando no está cargando en Valorant, se activa el modo deportista. Ejercicio para compensar las horas de silla.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-head-side-cough"></i>
+                    </div>
+                    <h3>HORARIO DESTROZADO</h3>
+                    <p>Duerme de día, despierta de noche. Su reloj biológico está en otro planeta, pero así rinde al máximo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>ADICTA AL VALORANT</h3>
+                    <p>Rango competitivo, mains de duelista y una obsesión por mejorar cada día. Que no te frene si la ves tryhardear.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Valorant: Adicción y logros -->
+    <section class="valorant-section" id="valorant">
+        <div class="container">
+            <h2 class="section-title">ADICCIÓN AL <span class="gradient-text">VALORANT</span></h2>
+            <p class="section-subtitle">Horas interminables, partidas intensas y un rango que sube lentamente (o baja, depende del día)</p>
+            
+            <div class="valorant-grid">
+                <div class="valorant-card">
+                    <div class="valorant-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>RANGO ACTUAL</h3>
+                    <p class="rank">PLATINUM II</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <span class="rank-sub">Subiendo de a poco, pero con garra</span>
+                </div>
+                <div class="valorant-card">
+                    <div class="valorant-icon">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <h3>AGENTE FAVORITO</h3>
+                    <p class="agent">REYNA / JETT</p>
+                    <p>Frag out o morir en el intento. Su estilo agresivo no da tregua.</p>
+                </div>
+                <div class="valorant-card">
+                    <div class="valorant-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>HORAS JUGADAS</h3>
+                    <p class="hours">+1500h</p>
+                    <p>Sí, es una adicción, pero con orgullo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Clips destacados de Twitch (4 clips reales) -->
+    <section class="clips" id="clips">
+        <div class="container">
+            <h2 class="section-title">CLIPS <span class="gradient-text">DESTACADOS</span></h2>
+            <p class="section-subtitle">Los mejores momentos de sus directos, sin filtros</p>
+            
+            <div class="clips-grid">
+                <!-- Clip 1: HungrySuccessfulWaspWow -->
+                <div class="clip-item">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://clips.twitch.tv/embed?clip=HungrySuccessfulWaspWow-2hVI07qRkaWHMAiD&parent=localhost&parent=127.0.0.1"
+                            allow="fullscreen"
+                            title="Clip de Twitch 1">
+                        </iframe>
+                    </div>
+                    <div class="clip-info">
+                        <h3>🔥 JUGADA BRUTAL</h3>
+                        <p>Un momento épico que no te puedes perder.</p>
+                    </div>
+                </div>
+                <!-- Clip 2: ComfortableRoundKiwiHassaanChop -->
+                <div class="clip-item">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://clips.twitch.tv/embed?clip=ComfortableRoundKiwiHassaanChop-KWWCVCndccy6dyb-&parent=localhost&parent=127.0.0.1"
+                            allow="fullscreen"
+                            title="Clip de Twitch 2">
+                        </iframe>
+                    </div>
+                    <div class="clip-info">
+                        <h3>🎯 PRECISIÓN QUIRÚRGICA</h3>
+                        <p>Headshots que duelen solo de verlos.</p>
+                    </div>
+                </div>
+                <!-- Clip 3: PowerfulTentativeAyeayeM4xHeh -->
+                <div class="clip-item">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://clips.twitch.tv/embed?clip=PowerfulTentativeAyeayeM4xHeh-i_CG1kCsQ8QYgh8F&parent=localhost&parent=127.0.0.1"
+                            allow="fullscreen"
+                            title="Clip de Twitch 3">
+                        </iframe>
+                    </div>
+                    <div class="clip-info">
+                        <h3>😱 REACCIÓN IMPOSIBLE</h3>
+                        <p>Los reflejos de una jugadora de élite.</p>
+                    </div>
+                </div>
+                <!-- Clip 4: CorrectSingleStingraySpicyBoy -->
+                <div class="clip-item">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://clips.twitch.tv/embed?clip=CorrectSingleStingraySpicyBoy-wyY1K1daMxvKXReT&parent=localhost&parent=127.0.0.1"
+                            allow="fullscreen"
+                            title="Clip de Twitch 4">
+                        </iframe>
+                    </div>
+                    <div class="clip-info">
+                        <h3>💀 CLUTCH 1V4</h3>
+                        <p>Nervios de acero y puntería letal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección contacto / redes -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">¿QUIERES VERME <span class="gradient-text">TRYHARDEAR?</span></h2>
+                <p class="contact-description">
+                    Sígueme en mis redes para no perderte ningún directo nocturno, clips y memes. 
+                    ¡Te espero en Twitch para echar unas partidas!
+                </p>
+                <div class="contact-buttons">
+                    <a href="https://www.twitch.tv/ninitarivers" 
+                       target="_blank" 
+                       class="cta-button twitch-btn">
+                        <span>SÍGUEME EN TWITCH</span>
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pie de página con redes sociales y BOTÓN TROLL -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-name">
+                    <h3>NINITARIVERS</h3>
+                    <p>STREAMER · VALORANT · NOCTURNA</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.twitch.tv/ninitarivers" target="_blank" class="social-circle" title="Twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCwhsXaAER6e4nhOdu5UiM6A" target="_blank" class="social-circle" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://x.com/ninitarivers" target="_blank" class="social-circle" title="X (Twitter)">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nellarioss/" target="_blank" class="social-circle" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 NINITARIVERS · TODOS LOS DERECHOS RESERVADOS</p>
+                <!-- BOTÓN TROLL: al hacer clic, abre el Rickroll en nueva pestaña -->
+                <div class="troll-area">
+                    <button id="trollButton" class="troll-btn">
+                        <i class="fas fa-skull"></i> SORPRESA OCULTA <i class="fas fa-skull"></i>
+                    </button>
+                    <p class="troll-warning">(No toques si no quieres perder el tiempo... pero toca)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
