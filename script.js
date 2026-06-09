@@ -164,17 +164,24 @@ function initTrollButton() {
     }
 }
 
-// Intersection Observer para animaciones al hacer scroll
-function initScrollAnimations() {
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    sections.forEach(section => observer.observe(section));
+// FIX DEFINITIVO PARA TWITCH: añade el parámetro parent automáticamente
+function fixTwitchEmbeds() {
+    const currentHost = window.location.hostname; // será "gestoreterno.github.io"
+    if (!currentHost || currentHost === '' || currentHost === '127.0.0.1') return;
+
+    // Selecciona todos los iframes que apunten a Twitch
+    const twitchIframes = document.querySelectorAll('iframe[src*="twitch.tv"]');
+    twitchIframes.forEach(iframe => {
+        let src = iframe.getAttribute('src');
+        if (src && !src.includes(`parent=${currentHost}`)) {
+            // Limpiar posibles parámetros parent antiguos
+            src = src.replace(/[?&]parent=[^&]*/g, '');
+            // Añadir el parent actual
+            const separator = src.includes('?') ? '&' : '?';
+            const newSrc = src + separator + `parent=${currentHost}`;
+            iframe.setAttribute('src', newSrc);
+        }
+    });
 }
 
 // Fallback de imágenes del logo
@@ -186,7 +193,8 @@ function initImageFallbacks() {
             this.style.display = 'none';
             logoPlaceholder.style.display = 'flex';
         };
-        if (!logoImg.src || logoImg.src.includes('undefined')) {
+        // Si la imagen no carga por cualquier motivo, mostrar el placeholder
+        if (!logoImg.complete || logoImg.naturalWidth === 0) {
             logoImg.style.display = 'none';
             logoPlaceholder.style.display = 'flex';
         }
@@ -199,8 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = new Navigation();
     const scroll = new ScrollEffects();
     initTrollButton();
-    initScrollAnimations();
     initImageFallbacks();
+
+    // Aplicar el fix de Twitch después de que el DOM esté listo
+    fixTwitchEmbeds();
 
     // Mostrar cuerpo con fade
     document.body.style.opacity = '0';
@@ -218,6 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const iframes = document.querySelectorAll('iframe');
     iframes.forEach(iframe => iframe.setAttribute('loading', 'lazy'));
 });
+
+// Asegurar que el fix se ejecute también si los iframes se cargan después (por si acaso)
+window.addEventListener('load', fixTwitchEmbeds);
 
 window.addEventListener('beforeunload', () => {
     if (window.techBackground) window.techBackground.destroy();
